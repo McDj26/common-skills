@@ -29,6 +29,37 @@ Authenticate with npm, then run:
 npm publish --access public
 ```
 
+## GitHub Actions Release Flow
+
+This repository is configured for tag-driven npm publishing.
+
+### Required repository secret
+
+- `NPM_TOKEN`: npm access token with permission to publish `@e.yen/common-skills`
+
+### Workflows
+
+- `.github/workflows/release-check.yml`
+  Runs on `main` pushes and pull requests. It verifies the CLI entrypoint and runs `npm pack --json`.
+- `.github/workflows/publish.yml`
+  Runs on tag pushes matching `v*`. It verifies the package and publishes it to npm.
+
+### Recommended release steps
+
+1. Update `package.json` version
+2. Commit the version bump
+3. Create a tag such as `v0.1.1`
+4. Push `main` and the tag
+
+Example:
+
+```bash
+git add package.json
+git commit -m "chore: release v0.1.1"
+git tag v0.1.1
+git push origin main --tags
+```
+
 ## Upgrade Consumer Repositories
 
 In the consuming repository:
@@ -43,4 +74,3 @@ npx eyen-skills update
 - The package `files` allowlist controls what gets published.
 - Installed tools are copied into the consumer repository by `eyen-skills`; they are not executed directly from `node_modules`.
 - When adding new skills, update both the `skills/` directory and `catalog/skills.json`.
-
