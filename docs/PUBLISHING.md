@@ -21,9 +21,9 @@ cd <temp-dir>/.eyen-skills/tools/playwright
 npm run bootstrap
 ```
 
-## Publish
+## First Release
 
-Authenticate with npm, then run:
+For the first package release, publish manually from a trusted local machine. This creates the npm package entry so Trusted Publishing can be configured afterward.
 
 ```bash
 npm publish --access public
@@ -31,20 +31,31 @@ npm publish --access public
 
 ## GitHub Actions Release Flow
 
-This repository is configured for tag-driven npm publishing.
+After the first manual publish, this repository is configured for tag-driven npm publishing with npm Trusted Publishing.
 
-### Required repository secret
+### npm package configuration
 
-- `NPM_TOKEN`: npm access token with permission to publish `@e.yen/common-skills`
+After `0.1.0` is published manually, configure Trusted Publishing in the npm package settings:
+
+- Provider: `GitHub Actions`
+- Owner/User: `McDj26`
+- Repository: `common-skills`
+- Workflow file: `publish.yml`
 
 ### Workflows
 
 - `.github/workflows/release-check.yml`
   Runs on `main` pushes and pull requests. It verifies the CLI entrypoint and runs `npm pack --json`.
 - `.github/workflows/publish.yml`
-  Runs on tag pushes matching `v*`. It verifies the package and publishes it to npm.
+  Runs on tag pushes matching `v*`. It verifies the package and publishes it to npm through Trusted Publishing.
 
-### Recommended release steps
+### First release sequence
+
+1. Keep `package.json` at `0.1.0`
+2. Publish `0.1.0` manually with `npm publish --access public`
+3. Configure Trusted Publishing in the npm package settings
+
+### Subsequent release steps
 
 1. Update `package.json` version
 2. Commit the version bump
