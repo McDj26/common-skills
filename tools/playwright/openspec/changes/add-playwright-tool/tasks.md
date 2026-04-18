@@ -1,0 +1,5 @@
+- [x] Create the repository-level structure for self-contained tools.
+- [x] Add the `tools/playwright` runtime files and DOM inspection CLI.
+- [x] Add tool-local README and agent guidance.
+- [x] Add tool-local OpenSpec config and initial change artifacts.
+- [x] Install dependencies and verify the CLI help command.

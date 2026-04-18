@@ -1,0 +1,16 @@
+{
+  "name": "@common-skills/playwright-tool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Playwright-based browser utility for DOM inspection and page debugging",
+  "scripts": {
+    "bootstrap": "node ./scripts/bootstrap.mjs",
+    "doctor": "node ./scripts/bootstrap.mjs --verify-only",
+    "dom": "node ./scripts/dom-dump.mjs",
+    "help": "node ./scripts/dom-dump.mjs --help"
+  },
+  "dependencies": {
+    "playwright": "^1.54.2"
+  }
+}

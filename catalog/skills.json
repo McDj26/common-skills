@@ -1,0 +1,18 @@
+{
+  "skills": [
+    {
+      "name": "playwright-dom",
+      "description": "Inspect runtime DOM, capture screenshots, and debug browser-rendered pages.",
+      "requiredTools": [
+        "playwright"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "playwright",
+      "description": "Playwright-based DOM inspection helper with bootstrap and self-test."
+    }
+  ]
+}
+

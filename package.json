@@ -1,0 +1,54 @@
+{
+  "name": "@e.yen/common-skills",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Reusable Codex skills and supporting tools with a project install CLI.",
+  "license": "MIT",
+  "author": "e.yen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McDj26/common-skills.git"
+  },
+  "homepage": "https://github.com/McDj26/common-skills#readme",
+  "bugs": {
+    "url": "https://github.com/McDj26/common-skills/issues"
+  },
+  "keywords": [
+    "codex",
+    "skills",
+    "playwright",
+    "cli",
+    "browser-automation"
+  ],
+  "bin": {
+    "eyen-skills": "./bin/eyen-skills.mjs"
+  },
+  "files": [
+    "bin/eyen-skills.mjs",
+    "catalog/README.md",
+    "catalog/skills.json",
+    "docs/CONSUMER_SETUP.md",
+    "docs/PUBLISHING.md",
+    "skills/playwright-dom/SKILL.md",
+    "skills/playwright-dom/agents/openai.yaml",
+    "skills/playwright-dom/references/tool-layout.md",
+    "tools/playwright/AGENTS.md",
+    "tools/playwright/README.md",
+    "tools/playwright/package.json",
+    "tools/playwright/package-lock.json",
+    "tools/playwright/scripts/bootstrap.mjs",
+    "tools/playwright/scripts/browser-resolution.mjs",
+    "tools/playwright/scripts/dom-dump.mjs",
+    "README.md",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "eyenskills:help": "node ./bin/eyen-skills.mjs --help",
+    "eyenskills:list": "node ./bin/eyen-skills.mjs list"
+  }
+}

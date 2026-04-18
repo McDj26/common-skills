@@ -1,0 +1,16 @@
+schema: spec-driven
+
+context: |
+  Tool: Playwright DOM inspection helper
+  Runtime: Node.js with Playwright
+  Scope: browser automation, DOM extraction, screenshots, light page inspection
+  Rule: tool behavior is documented and versioned inside this tool directory only
+
+rules:
+  proposal:
+    - Explain why the CLI behavior needs to change.
+    - Describe user-facing flags or outputs when they are affected.
+  tasks:
+    - Keep tasks focused on one tool.
+    - Include verification steps for scripts and docs.
+

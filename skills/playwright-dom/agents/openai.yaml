@@ -1,0 +1,4 @@
+interface:
+  display_name: "Playwright DOM"
+  short_description: "Inspect live page DOM with the shared Playwright tool."
+  default_prompt: "Use $playwright-dom to inspect a page's runtime DOM with the common-skills Playwright tool."
